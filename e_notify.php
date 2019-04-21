@@ -32,7 +32,6 @@ class enquiry_notify extends notify
 
         return $config;
     }
-    
 
     function enquiryNotify($data)
     {
