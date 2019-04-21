@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins|Quicksand')
+/* Must be first line, before classes etc. */
+
+
+
+.highlight{
+    
+    border: red 1px solid;
+    
+    }
+.successHeading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    
+}
+.successText{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+.successItalic{
+        font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+.errorHeading{
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #bf0000;
+    
+}
+.errorText{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    color: #bf0000;
+}
+.errorItalic{
+        font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+}
+.enquiryGreen{
+    color: #31ef31;
+    
+    }
+.enquiryAmber{
+    color: #ffc107;
+    
+    }
+.enquiryRed{
+    color: #ff0000;
+    
+    }
+.enquiryMenuName{
+    min-width:200px;
+    }
+.enquiryMenuDate{
+    max-width:155px;
+    text-align: right;
+    }
+.enquiryAdmin{
+    width:100%;
+    text-align: center;
+    margin-top: 10px;;
+    }
+    
+@-webkit-keyframes flash {
+  0%, 100%, 50% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 100%, 50% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.faa-flash.animated,
+.faa-flash.animated-hover:hover,
+.faa-parent.animated-hover:hover > .faa-flash {
+  -webkit-animation: flash 2s ease infinite;
+  animation: flash 2s ease infinite;
+}
+
+.faa-flash.animated.faa-fast,
+.faa-flash.animated-hover.faa-fast:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-fast {
+  -webkit-animation: flash 1s ease infinite;
+  animation: flash 1s ease infinite;
+}
+
+.faa-flash.animated.faa-slow,
+.faa-flash.animated-hover.faa-slow:hover,
+.faa-parent.animated-hover:hover > .faa-flash.faa-slow {
+  -webkit-animation: flash 3s ease infinite;
+  animation: flash 3s ease infinite;
+}

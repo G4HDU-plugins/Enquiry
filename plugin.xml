@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e107Plugin name="Enquiries" lan="LAN_PLUGIN_ENQUIRY_NAME" version="1.0.1" date="2019-04-01" compatibility="2.0" installRequired="true" >
+	<author name="Barry Keal G4HDU" url="http://keal.me.uk" />
+	<summary>An enquiry Plugin to receive enquiries from visitors.</summary>
+	<description lan="LAN_PLUGIN__ENQUIRY_DESC">An enquiries form and response management plugin.</description>
+	<category>misc</category>
+	<keywords>
+		<word>enquiry</word>
+		<word>public</word>
+		<word>guest</word>
+	</keywords>
+	<screenshots>
+		<image></image>
+	</screenshots>
+	<adminLinks>
+		<link url='admin_config.php' description='Configure Enquiry Plugin' icon='images/enquiry_32.png' iconSmall='images/enquiry_16.png' icon128="" primary='true' >LAN_CONGIGURE</link>
+		<link url="admin_config.php?mode=options" description="Configure Enquiry Settings" icon="manage" >Enquiry Prefs</link>
+	</adminLinks>
+	<siteLinks>
+		<link url="{e_PLUGIN}enquiry/index.php" perm='everyone' sef='index'>LAN_PLUGIN_ENQUIRY_LINK</link>
+	</siteLinks>
+	<pluginPrefs>
+		<pref name="pref_conname">Webmaster</pref>
+		<pref name="pref_conphone">911999</pref>
+		<pref name="pref_emailname">Webmaster</pref>
+		<pref name="pref_emailaddress">webmaster@example.com</pref>
+		<pref name="pref_welcome"></pref>
+		<pref name="pref_success"></pref>
+		<pref name="pref_error"></pref>
+	</pluginPrefs>
+	<userClasses>
+		<class name="enquiry_userclass" description="Enquiry Administrator" />		
+	</userClasses>
+</e107Plugin>
