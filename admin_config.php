@@ -490,7 +490,7 @@ class plugin_enquiry_admin_ui extends e_admin_ui
     public function afterUpdate($new_data, $old_data, $id)
     {
         global $e107cache;
-        $e107cache->clear('nq_enquiry', false, true);
+        $e107cache->clear('nomd5_enquiry', false, true);
 
         return;
     }
@@ -764,7 +764,7 @@ class plugin_enquiry_cat_admin_ui extends e_admin_ui
     public function afterUpdate($new_data, $old_data, $id)
     {
         global $e107cache;
-        $e107cache->clear('enquiry', false, true);
+        $e107cache->clear('nomd5_enquiry', false, true);
 
         return;
     }
