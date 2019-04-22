@@ -20,11 +20,11 @@ global $e107cache;
 
 if (!empty($parm))
 {
-    $text .= print_a($parm, true); // e_menu.php form data.
+   // $text .= print_a($parm, true); // e_menu.php form data.
 }
 $text=$e107cache->retrieve("nomd5_enquiry");
-
-if (!$text )
+//var_dump($text);
+if (!$text)
 {
     
     $sql = e107::getDB(); // mysql class object
@@ -34,14 +34,14 @@ if (!$text )
     $td = new convert();
     $enquiry_prefs = e107::pref('enquiry');
     //print_a($enquiry_prefs);
-    $qry = 'SELECT * FROM #enquiry_forms where enquiry_closedon=0 ORDER BY enquiry_dateposted ASC LIMIT 0,' . $enquiry_prefs['pref_max_menu'];
-    if ($sql->gen($qry, true))
+    $qry = 'SELECT * FROM #enquiry_forms where enquiry_closedon = 0 ORDER BY enquiry_dateposted ASC LIMIT 0,' . $enquiry_prefs['pref_max_menu'];
+    if ($sql->gen($qry, false))
     {
         $today = time();
         $oneDay = 86400;
         $green = (3 * $oneDay);
-        $amber = (6 * $oneDay);
-        $red = (9 * $oneDay);
+        $amber = (9 * $oneDay);
+        $red = (12 * $oneDay);
         //   print ($today - $red)."<br>";
         //    print $today - $amber."<br>";
         //   print $today - $green."<br>";
@@ -71,9 +71,12 @@ if (!$text )
         $text .= '</table>
     <div class="enquiryAdmin"><a href="' . e_PLUGIN . 'enquiry/admin_config.php" class="btn btn-info" role="button">' . LAN_PLUGIN_ENQUIRY_MENU_ADMIN . '</a></div>';
         //
-        var_dump( $text);
-        $e107cache->set("nomd5_enquiry", $text);
-    }
+   //     var_dump( $text);
+        
+    }else{
+        $text=LAN_PLUGIN_ENQUIRY_MENU_NONE;
+        }
+    $e107cache->set("nomd5_enquiry", $text);
 }
 
 e107::getRender()->tablerender(LAN_PLUGIN_ENQUIRY_MENU_CAPTION, $text, 'enquirylist');

@@ -9,3 +9,4 @@
 */
 define("LAN_PLUGIN_ENQUIRY_MENU_ADMIN", "Administer");
 define("LAN_PLUGIN_ENQUIRY_MENU_CAPTION", "Enquiries");
+define("LAN_PLUGIN_ENQUIRY_MENU_NONE", "No outstanding enquiries");

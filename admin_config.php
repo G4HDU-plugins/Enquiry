@@ -1,12 +1,13 @@
 <?php
+
 /**
-* Enquiry Plugin for the e107 Website System
-*
-* Copyright (C) 2008-2017 Barry Keal G4HDU (http://www.keal.me.uk)
-* Released under the terms and conditions of the
-* GNU General Public License (http://www.gnu.org/licenses/gpl.txt)
-*
-*/
+ * Enquiry Plugin for the e107 Website System
+ *
+ * Copyright (C) 2008-2017 Barry Keal G4HDU (http://www.keal.me.uk)
+ * Released under the terms and conditions of the
+ * GNU General Public License (http://www.gnu.org/licenses/gpl.txt)
+ *
+ */
 
 require_once ("../../class2.php");
 if (!getperms("P"))
@@ -33,13 +34,11 @@ class plugin_enquiry_admin extends e_admin_dispatcher
             'controller' => 'plugin_enquiry_admin_ui',
             'path' => null,
             'ui' => 'plugin_enquiry_admin_form_ui',
-            'uipath' => null),
-            'category' => array(
+            'uipath' => null), 'category' => array(
             'controller' => 'plugin_enquiry_cat_admin_ui',
             'path' => null,
             'ui' => 'plugin_enquiry_admin_cat_form_ui',
-            'uipath' => null)
-            );
+            'uipath' => null));
 
     /* Both are optional
     * protected $defaultMode = null;
@@ -54,13 +53,12 @@ class plugin_enquiry_admin extends e_admin_dispatcher
     protected $adminMenu = array(
         'main/list' => array('caption' => LAN_PLUGIN_ENQUIRY_ADMIN_MENUCAPTION, 'perm' => '0'),
         'main/create' => array('caption' => LAN_CREATE, 'perm' => '0'),
-        
+
         'other0' => array('divider' => true),
         'category/list' => array('caption' => LAN_PLUGIN_ENQUIRY_ADMIN_CATEGORIES, 'perm' => '0'),
         'category/create' => array('caption' => LAN_CREATE, 'perm' => '0'),
         'other1' => array('divider' => true),
-        'main/prefs' => array('caption' => LAN_PLUGIN_ENQUIRY_ADMIN_MENUSETTINGS, 'perm' => '0')
-        );
+        'main/prefs' => array('caption' => LAN_PLUGIN_ENQUIRY_ADMIN_MENUSETTINGS, 'perm' => '0'));
 
     /**
      * Optional, mode/action aliases, related with 'selected' menu CSS class
@@ -68,7 +66,7 @@ class plugin_enquiry_admin extends e_admin_dispatcher
      * This will mark active main/list menu item, when current page is main/edit
      * @var array
      */
-    protected $adminMenuAliases = array('main/edit' => 'main/list','category/edit'=>'category/list');
+    protected $adminMenuAliases = array('main/edit' => 'main/list', 'category/edit' => 'category/list');
 
     /**
      * Navigation menu title
@@ -361,15 +359,14 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'writeParms' => array(
                 '0' => LAN_PLUGIN_ENQUIRY_ADMIN_NOSAY,
                 '1' => LAN_PLUGIN_ENQUIRY_ADMIN_MALE,
-                '2' => LAN_PLUGIN_ENQUIRY_ADMIN_FEMALE
-                )),
-        'enquiry_category'=>array(
+                '2' => LAN_PLUGIN_ENQUIRY_ADMIN_FEMALE)),
+        'enquiry_category' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_CAT,
             'type' => 'method',
             'data' => 'int',
             'width' => 'auto',
             'thclass' => '',
-        ),
+            ),
         'enquiry_otherinfo' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_NOTES,
             'type' => 'textarea',
@@ -390,7 +387,7 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'thclass' => '',
             'readParms' => 'long',
             'writeParms' => 'type=datetime'),
-        'enquiry_respondedon' => array(
+        'enquiry_closedon' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_RESPONDON,
             'type' => 'datestamp',
             'data' => 'int',
@@ -487,9 +484,26 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'data' => 'str',
             'tab' => 3),
         );
+        public function afterCreate($new_data, $old_data, $id)
+    {
+        global $e107cache;
+
+        $e107cache->clear('nomd5_enquiry', false, true);
+
+        return;
+    }
     public function afterUpdate($new_data, $old_data, $id)
     {
         global $e107cache;
+
+        $e107cache->clear('nomd5_enquiry', false, true);
+
+        return;
+    }
+    public function afterDelete($new_data, $old_data, $id)
+    {
+        global $e107cache;
+
         $e107cache->clear('nomd5_enquiry', false, true);
 
         return;
@@ -498,7 +512,7 @@ class plugin_enquiry_admin_ui extends e_admin_ui
 
 class plugin_enquiry_admin_form_ui extends e_admin_form_ui
 {
-   function enquiry_category($curVal, $mode) // not really necessary since we can use 'dropdown' - but just an example of a custom function.
+    function enquiry_category($curVal, $mode) // not really necessary since we can use 'dropdown' - but just an example of a custom function.
     {
         $frm = e107::getForm();
         $sql = e107::getDB();
@@ -732,7 +746,8 @@ class plugin_enquiry_cat_admin_ui extends e_admin_ui
             'width' => '20%',
             'thclass' => '',
             'forced' => true,
-            'primary' => false,),
+            'primary' => false,
+            ),
         'enquiry_category_details' => array(
             'title' => LAN_PLUGIN_ENQUIRY_CAT_ADMIN_DESC,
             'type' => 'text',
@@ -759,11 +774,27 @@ class plugin_enquiry_cat_admin_ui extends e_admin_ui
         'enquiry_category_details',
         'enquiry_category_lastupdate',
         'options');
-//
+    //
+        public function afterCreate($new_data, $old_data, $id)
+    {
+        global $e107cache;
 
+        $e107cache->clear('nomd5_enquiry', false, true);
+
+        return;
+    }
     public function afterUpdate($new_data, $old_data, $id)
     {
         global $e107cache;
+
+        $e107cache->clear('nomd5_enquiry', false, true);
+
+        return;
+    }
+    public function afterDelete($new_data, $old_data, $id)
+    {
+        global $e107cache;
+
         $e107cache->clear('nomd5_enquiry', false, true);
 
         return;
