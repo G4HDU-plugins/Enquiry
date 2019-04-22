@@ -19,7 +19,7 @@ $class = $enquiry_prefs['pref_userclass']; // get the class to check
 //print_a($enquiry_prefs);
 if (!e107::getUser()->checkClass($class, false))
 {
-
+    // not permitted to view
 } else
 {
 
