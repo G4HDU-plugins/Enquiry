@@ -445,6 +445,11 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'type' => 'text',
             'data' => 'int',
             'tab' => 0),
+                    'pref_userclass' => array(
+            'title' => LAN_PLUGIN_ENQUIRY_ADMIN_MENUVISIBILIIY,
+            'type' => 'userclass',
+            'data' => 'int',
+            'tab' => 0),
         'pref_use_captcha' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_USECAPTURE,
             'type' => 'boolean',
@@ -484,7 +489,7 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'data' => 'str',
             'tab' => 3),
         );
-        public function afterCreate($new_data, $old_data, $id)
+    public function afterCreate($new_data, $old_data, $id)
     {
         global $e107cache;
 
@@ -775,7 +780,7 @@ class plugin_enquiry_cat_admin_ui extends e_admin_ui
         'enquiry_category_lastupdate',
         'options');
     //
-        public function afterCreate($new_data, $old_data, $id)
+    public function afterCreate($new_data, $old_data, $id)
     {
         global $e107cache;
 

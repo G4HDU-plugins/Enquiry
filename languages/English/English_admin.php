@@ -50,6 +50,7 @@ define("LAN_PLUGIN_ENQUIRY_ADMIN_CONENAME", "Contact Email Name");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_CONEMAIL", "Contact Email");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_USECAPTURE", "Use Captcha");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_MAXMENU", "No items in menu");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MENUVISIBILIIY", "Menu visible to");
 
 define("LAN_PLUGIN_ENQUIRY_ADMIN_USEWELCOME", "Use This Welcome Message");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_WELCOMETEXT", "Welcome Message");
