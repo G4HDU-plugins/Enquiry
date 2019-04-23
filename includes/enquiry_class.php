@@ -9,8 +9,10 @@
  *
  */
 global $sec_img;
+define('e_CAPTCHA_FONTCOLOR', "ff0000");
 include_once (e_HANDLER . 'secure_img_handler.php');
 $sec_img = new secure_image;
+
 class enquiry_class
 {
     private $db;
@@ -68,6 +70,7 @@ class enquiry_class
         if ($this->image && isset($_POST['rand_num']))
         {
             $this->verified_code = e107::getSecureImg()->verify_code($_POST['rand_num'], $_POST['code_verify']);
+            //   var_dump($this->verified_code );
         }
 
     }
@@ -92,7 +95,7 @@ class enquiry_class
             {
                 $this->action = 'form';
             }
-
+            print_a($_POST);
             if (isset($_POST['submit']))
             {
                 $this->action = 'save';
@@ -170,7 +173,7 @@ class enquiry_class
      */
     function doForm()
     {
-        $this->shortcodes->post=$_POST;
+        $this->shortcodes->post = $_POST;
         $this->text = $this->tp->parseTemplate($this->template->enquiryForm(), true, $this->shortcodes);
         return $this->text;
     }
@@ -182,6 +185,7 @@ class enquiry_class
      */
     function doSave()
     {
+
         $row['enquiry_title'] = intval($_POST['enquiry_title']);
         $row['enquiry_name'] = $this->tp->toDB($_POST['enquiry_name']);
         $row['enquiry_address1'] = $this->tp->toDB($_POST['enquiry_address1']);
@@ -195,36 +199,42 @@ class enquiry_class
         $row['enquiry_agerange'] = intval($_POST['enquiry_agerange']);
         $row['enquiry_gender'] = intval($_POST['enquiry_gender']);
         $row['enquiry_dateposted'] = time();
-        $sql = 'INSERT INTO #enquiry_forms (';
-        $values = 'VALUES (';
-        foreach ($row as $key => $value)
+        if (!$this->image || ($this->image && isset($_POST['rand_num']) && $this->verified_code))
         {
-            $sql .= "{$key},";
-            $values .= "'{$value}',";
-        }
-        $sql = substr($sql, 0, -1);
-        $values = substr($values, 0, -1);
+            $sql = 'INSERT INTO #enquiry_forms (';
+            $values = 'VALUES (';
+            foreach ($row as $key => $value)
+            {
+                $sql .= "{$key},";
+                $values .= "'{$value}',";
+            }
+            $sql = substr($sql, 0, -1);
+            $values = substr($values, 0, -1);
 
-        $values .= ') ';
-        $sql .= ') ' . $values;
+            $values .= ') ';
+            $sql .= ') ' . $values;
 
-        $this->cache->clear('nomd5_enquiry', false, true);
-        if (e107::getDB()->gen($sql, false) !== false)
-        {
-            e107::getMessage()->addSuccess('Saved');
-            $id = e107::getDB()->lastInsertId();
-            $sql='SELECT * FROM #enquiry_forms 
+            $this->cache->clear('nomd5_enquiry', false, true);
+            if (e107::getDB()->gen($sql, false) !== false)
+            {
+                e107::getMessage()->addSuccess('Saved');
+                $id = e107::getDB()->lastInsertId();
+                $sql = 'SELECT * FROM #enquiry_forms 
             left join #enquiry_categories on enquiry_category = enquiry_category_id
-            WHERE enquiry_id = '.$id.' ';
-            e107::getDB()->gen($sql,false);
-            $info=e107::getDB()->fetch();
-         //   print_a($info);
-				e107::getEvent()->trigger('enquiryNotify', $info);
-            return true;
+            WHERE enquiry_id = ' . $id . ' ';
+                e107::getDB()->gen($sql, false);
+                $info = e107::getDB()->fetch();
+                //   print_a($info);
+                e107::getEvent()->trigger('enquiryNotify', $info);
+                return true;
+            } else
+            {
+                e107::getMessage()->addError('Error submitting your enquiry.');
+                return false;
+            }
         } else
         {
-            e107::getMessage()->addError('Error submitting your enquiry.');
-            return false;
+            e107::getMessage()->addError('Invalid verification.');
         }
 
 

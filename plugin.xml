@@ -27,8 +27,14 @@
 		<pref name="pref_welcome"></pref>
 		<pref name="pref_success"></pref>
 		<pref name="pref_error"></pref>
+		<pref name="pref_max_menu"></pref>
+		<pref name="pref_userclass"></pref>
+		<pref name="pref_use_captcha"></pref>
+		<pref name="pref_welcome_use"></pref>
+		<pref name="pref_success_use"></pref>
+		<pref name="pref_error_use"></pref>
 	</pluginPrefs>
 	<userClasses>
-		<class name="enquiry_userclass" description="Enquiry Administrator" />		
+		<class name="enquiry_userclass" description="Enquiry Menu Viewer" />		
 	</userClasses>
 </e107Plugin>

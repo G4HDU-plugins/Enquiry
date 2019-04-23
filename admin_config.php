@@ -445,7 +445,7 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'type' => 'text',
             'data' => 'int',
             'tab' => 0),
-                    'pref_userclass' => array(
+        'pref_userclass' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_MENUVISIBILIIY,
             'type' => 'userclass',
             'data' => 'int',

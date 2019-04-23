@@ -133,7 +133,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     {
         return '<textarea class="form-control" id="enquiry_otherinfo" name="enquiry_otherinfo" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE . '" required=""></textarea>';
     }
-     /**
+    /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_gender2()
      * 
      * @return
@@ -191,7 +191,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
         }
         $field .= "</select>";
         return $field;
-       
+
     }
     function sc_enquiry_less18()
     {
@@ -258,22 +258,23 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     }
     function sc_enquiry_imagecode_number()
     {
-        if ($this->use_imagecode && $this->guest)
+        if ($this->use_imagecode )
         {
             return e107::getSecureImg()->renderImage();
+        } else
+        {
+            return '';
         }
-
-        return '';
-
     }
     function sc_enquiry_imagecode_box($parm = '')
     {
-        //  var_dump($this->use_imagecode );
-        if ($this->use_imagecode && $this->guest)
+        //var_dump($this->use_imagecode );
+        if ($this->use_imagecode )
         {
             return e107::getSecureImg()->renderInput();
+        } else
+        {
+            return '';
         }
-
-        return '';
     }
 }
