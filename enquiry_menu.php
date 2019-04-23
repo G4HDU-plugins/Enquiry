@@ -28,7 +28,6 @@ if (!e107::getUser()->checkClass($class, false))
 
     // get the cached version if available
     $text = $e107cache->retrieve("nomd5_enquiry");
-    //var_dump($text);
     if (!$text)
     {
         // No cache content so select all unresponded enquiries

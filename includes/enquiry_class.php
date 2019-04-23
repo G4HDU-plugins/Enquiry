@@ -38,7 +38,7 @@ class enquiry_class
 
         error_reporting(E_ALL);
         $this->pdfInstalled = e107::isInstalled('e107pdf');
-        //  var_dump($this->pdfInstalled);
+
         if ($this->pdfInstalled)
         {
             require_once (e_PLUGIN . 'pdf/e107pdf.php'); //require the e107pdf class
@@ -61,7 +61,7 @@ class enquiry_class
         $this->frm = e107::getForm(); // Form element class.
         $this->ns = e107::getRender(); // render in theme box.
         $this->prefs = e107::pref('enquiry'); // returns an array.
-        //var_dump($this->prefs);
+
         $this->shortcodes->prefs = $this->prefs;
         $this->guest = check_class('252');
         $this->shortcodes->guest = $this->guest;
@@ -70,7 +70,7 @@ class enquiry_class
         if ($this->image && isset($_POST['rand_num']))
         {
             $this->verified_code = e107::getSecureImg()->verify_code($_POST['rand_num'], $_POST['code_verify']);
-            //   var_dump($this->verified_code );
+            
         }
 
     }
@@ -95,7 +95,7 @@ class enquiry_class
             {
                 $this->action = 'form';
             }
-            print_a($_POST);
+           // print_a($_POST);
             if (isset($_POST['submit']))
             {
                 $this->action = 'save';
