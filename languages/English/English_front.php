@@ -56,6 +56,8 @@ define("LAN_PLUGIN_ENQUIRY_FRONT_PH_CONFIRM", "Confirm Email");
 define("LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE", "Enter the nature of your enquiry");
 define("LAN_PLUGIN_ENQUIRY_FRONT_CAT", "Enquiry Category");
 define("LAN_PLUGIN_ENQUIRY_FRONT_PH_HOME", "Return Home");
-//define("LAN_PLUGIN_ENQUIRY_FRONT_PH_", "Mx");
+
+define("LAN_PLUGIN_ENQUIRY_FRONT_ERROR_SUBMIT", "Error submitting your enquiry.");
+define("LAN_PLUGIN_ENQUIRY_FRONT_ERROR_CAPTURE", "Invalid capture verification code.");
 
 

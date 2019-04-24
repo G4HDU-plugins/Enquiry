@@ -229,12 +229,13 @@ class enquiry_class
                 return true;
             } else
             {
-                e107::getMessage()->addError('Error submitting your enquiry.');
+                e107::getMessage()->addError(LAN_PLUGIN_ENQUIRY_FRONT_ERROR_SUBMIT);
                 return false;
             }
         } else
         {
-            e107::getMessage()->addError('Invalid verification.');
+            e107::getMessage()->addError(LAN_PLUGIN_ENQUIRY_FRONT_ERROR_CAPTURE);
+            return false;
         }
 
 

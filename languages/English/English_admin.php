@@ -34,6 +34,7 @@ define("LAN_PLUGIN_ENQUIRY_ADMIN_ADDRESS2", "Address 2");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_TOWN", "Town");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_COUNTY", "County");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_POSTCODE", "Postcode");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_PHONE", "Phone");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_EMAIL", "Email");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_AGE", "Age range");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_GENDER", "Gender");
@@ -65,6 +66,11 @@ define("LAN_PLUGIN_ENQUIRY_ADMIN_NOSAY", "Prefer not to say");
 
 define("LAN_PLUGIN_ENQUIRY_ADMIN_STATUS", "Enquiries");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_UNANSWERED", "Open Enquiries");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MR", "Mr");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MRS", "Mrs");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MISS", "Miss");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MS", "Ms");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_MX", "Mx");
 
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_NAME", "Category Name");
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_DESC", "Description");
