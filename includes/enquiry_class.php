@@ -100,7 +100,11 @@ class enquiry_class
             {
                 $this->action = 'save';
             }
-
+        if ($this->image && ($this->image && isset($_POST['rand_num']) && !$this->verified_code))
+        {
+            // not verified code
+            $this->action='form';
+        }
             switch ($this->action)
             {
 
@@ -169,7 +173,7 @@ class enquiry_class
     /**
      * enquiry_class::doForm()
      * 
-     * @return void
+     * @return the form
      */
     function doForm()
     {
@@ -181,7 +185,7 @@ class enquiry_class
     /**
      * enquiry_class::doSave()
      * 
-     * @return
+     * @return true if saved false if error
      */
     function doSave()
     {
@@ -240,6 +244,11 @@ class enquiry_class
 
 
     }
+    /**
+     * enquiry_class::secure_image()
+     * 
+     * @return void
+     */
     function secure_image()
     {
         global $sec_img; // if ( !USER && $this->LAN_GB_image )
@@ -255,6 +264,15 @@ class enquiry_class
     }
 }
 
+/**
+ * mailMunger
+ * 
+ * @package Enquiry
+ * @author Father Barry
+ * @copyright 2019
+ * @version $Id$
+ * @access public
+ */
 class mailMunger
 {
 
@@ -266,7 +284,7 @@ class mailMunger
      * enquiry_class::munge()
      * 
      * @param mixed $address
-     * @return
+     * @return munged email address
      */
     static function munge($address)
     {
