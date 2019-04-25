@@ -17,6 +17,7 @@ define("LAN_PLUGIN_ENQUIRY_FRONT_LEGEND", "Make an enquiry");
 define("LAN_PLUGIN_ENQUIRY_FRONT_TITLE", "Title");
 define("LAN_PLUGIN_ENQUIRY_FRONT_MR", "Mr");
 define("LAN_PLUGIN_ENQUIRY_FRONT_MRS", "Mrs");
+define("LAN_PLUGIN_ENQUIRY_FRONT_MISS", "Miss");
 define("LAN_PLUGIN_ENQUIRY_FRONT_MS", "Ms");
 define("LAN_PLUGIN_ENQUIRY_FRONT_MX", "Mx");
 

@@ -33,20 +33,13 @@ class plugin_enquiry_template_class
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_title">'.LAN_PLUGIN_ENQUIRY_FRONT_TITLE.'</label>
                     <div class="col-md-4"> 
-                        <label class="radio-inline" for="enquiry_title-1">
-                        <input type="radio" name="enquiry_title" id="enquiry_title-1" value="1">'.LAN_PLUGIN_ENQUIRY_FRONT_MR.'</label>
-                        <label class="radio-inline" for="enquiry_title-2">
-                        <input type="radio" name="enquiry_title" id="enquiry_title-2" value="2">'.LAN_PLUGIN_ENQUIRY_FRONT_MRS.'</label> 
-                        <label class="radio-inline" for="enquiry_title-3">
-                        <input type="radio" name="enquiry_title" id="enquiry_title-3" value="3">'.LAN_PLUGIN_ENQUIRY_FRONT_MS.'</label>
-                        <label class="radio-inline" for="enquiry_title-2">
-                        <input type="radio" name="enquiry_title" id="enquiry_title-4" value="4">'.LAN_PLUGIN_ENQUIRY_FRONT_MX.'</label> 
+                        {ENQUIRY_MR} {ENQUIRY_MRS} {ENQUIRY_MISS}{ENQUIRY_MS} {ENQUIRY_MX}         
                     </div>
                 </div>
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_name">'.LAN_PLUGIN_ENQUIRY_FRONT_NAME.'</label>  
-                    <div class="col-md-5">
+                    <div class="col-md-4">
                         {ENQUIRY_NAME}
                     </div>
             </div>
@@ -55,7 +48,7 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_name">'.LAN_PLUGIN_ENQUIRY_FRONT_ADDR1.'</label>  
-                <div class="col-md-5">
+                <div class="col-md-4">
                     {ENQUIRY_ADDRESS1}
                 </div>
             </div>
@@ -63,7 +56,7 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_address2">'.LAN_PLUGIN_ENQUIRY_FRONT_ADDR2.'</label>  
-                <div class="col-md-5">
+                <div class="col-md-4">
                     {ENQUIRY_ADDRESS2}
                 </div>
             </div>
@@ -87,7 +80,7 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_postcode">'.LAN_PLUGIN_ENQUIRY_FRONT_POSTCODE.'</label>  
-                <div class="col-md-2">
+                <div class="col-md-4">
                     {ENQUIRY_POSTCODE}
                 </div>
             </div>
@@ -95,7 +88,7 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_phone">'.LAN_PLUGIN_ENQUIRY_FRONT_PHONE.'</label>  
-                <div class="col-md-2">
+                <div class="col-md-4">
                     {ENQUIRY_PHONE}
                 </div>
             </div>
@@ -103,7 +96,7 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_email">'.LAN_PLUGIN_ENQUIRY_FRONT_EMAIL.'</label>  
-                <div class="col-md-6">
+                <div class="col-md-4">
                     {ENQUIRY_EMAIL}
                 </div>
             </div>
@@ -111,14 +104,14 @@ class plugin_enquiry_template_class
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_emailcheck">'.LAN_PLUGIN_ENQUIRY_FRONT_REMAIL.'</label>  
-                <div class="col-md-6">
+                <div class="col-md-4">
                     {ENQUIRY_EMAILCHECK}
                 </div>
             </div>
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="enquiry_category">'.LAN_PLUGIN_ENQUIRY_FRONT_CAT.'</label>  
-                <div class="col-md-6">
+                <div class="col-md-4">
                     {ENQUIRY_CATEGORY}
                 </div>
             </div>

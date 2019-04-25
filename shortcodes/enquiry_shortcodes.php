@@ -41,7 +41,37 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
 
     }
 
+    /**
+     * plugin_enquiry_shortcodes_class::sc_enquiry_age18()
+     * 
+     * @return input element
+     */
+    function sc_enquiry_mr()
+    {
+        return '<label class="radio-inline" for="enquiry_title-1">
+                    <input type="radio" name="enquiry_title" id="enquiry_title-1" value="1">' . LAN_PLUGIN_ENQUIRY_FRONT_MR . '</label>';
 
+    }
+    function sc_enquiry_mrs()
+    {
+        return '<label class="radio-inline" for="enquiry_title-2">
+                        <input type="radio" name="enquiry_title" id="enquiry_title-2" value="2">' . LAN_PLUGIN_ENQUIRY_FRONT_MRS . '</label>';
+    }
+    function sc_enquiry_miss()
+    {
+        return '<label class="radio-inline" for="enquiry_title-3">
+                        <input type="radio" name="enquiry_title" id="enquiry_title-3" value="3">' . LAN_PLUGIN_ENQUIRY_FRONT_MISS . '</label>';
+    }
+    function sc_enquiry_ms()
+    {
+        return '<label class="radio-inline" for="enquiry_title-4">
+                        <input type="radio" name="enquiry_title" id="enquiry_title-4" value="4">' . LAN_PLUGIN_ENQUIRY_FRONT_MS . '</label> ';
+    }
+    function sc_enquiry_mx()
+    {
+        return '<label class="radio-inline" for="enquiry_title-5">
+                        <input type="radio" name="enquiry_title" id="enquiry_title-5" value="5">' . LAN_PLUGIN_ENQUIRY_FRONT_MX . '</label> ';
+    }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_name()
      * 
@@ -50,7 +80,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_name($parm = null)
     {
-        return '<input id="enquiry_name" name="enquiry_name" value="'.$this->post['enquiry_name'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_NAME . '" class="form-control input-md" required="">';
+        return '<input id="enquiry_name" name="enquiry_name" value="' . $this->post['enquiry_name'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_NAME .
+            '" class="form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_address1()
@@ -59,7 +90,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_address1()
     {
-        return '<input id="enquiry_address1" name="enquiry_address1" value="'.$this->post['enquiry_address1'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ADDRESS1 . '" class="form-control input-md" required="">';
+        return '<input id="enquiry_address1" name="enquiry_address1" value="' . $this->post['enquiry_address1'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ADDRESS1 .
+            '" class="form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_address2()
@@ -68,7 +100,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_address2()
     {
-        return '<input id="enquiry_address2" name="enquiry_address2" value="'.$this->post['enquiry_address2'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ADDRESS2 . '" class="form-control input-md" >';
+        return '<input id="enquiry_address2" name="enquiry_address2" value="' . $this->post['enquiry_address2'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ADDRESS2 .
+            '" class="form-control input-md" >';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_town()
@@ -77,7 +110,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_town()
     {
-        return '<input id="enquiry_town" name="enquiry_town" value="'.$this->post['enquiry_town'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_TOWN . '" class="form-control input-md" required="">';
+        return '<input id="enquiry_town" name="enquiry_town" value="' . $this->post['enquiry_town'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_TOWN .
+            '" class="form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_county()
@@ -86,7 +120,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_county()
     {
-        return ' <input id="enquiry_county" name="enquiry_county" value="'.$this->post['enquiry_county'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_COUNTY . '" class="form-control input-md">';
+        return ' <input id="enquiry_county" name="enquiry_county" value="' . $this->post['enquiry_county'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_COUNTY .
+            '" class="form-control input-md">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_postcode()
@@ -95,7 +130,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_postcode()
     {
-        return '<input id="enquiry_postcode" name="enquiry_postcode" value="'.$this->post['enquiry_postcode'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_POST . '" class="form-control input-md" required="">';
+        return '<input id="enquiry_postcode" name="enquiry_postcode" value="' . $this->post['enquiry_postcode'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_POST .
+            '" class="form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_phone()
@@ -104,7 +140,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_phone()
     {
-        return '<input id="enquiry_phone" name="enquiry_phone" value="'.$this->post['enquiry_phone'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_PHONE . '" class="form-control input-md">';
+        return '<input id="enquiry_phone" name="enquiry_phone" value="' . $this->post['enquiry_phone'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_PHONE .
+            '" class="form-control input-md">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_email()
@@ -113,7 +150,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_email()
     {
-        return '<input id="enquiry_email" name="enquiry_email" value="'.$this->post['enquiry_email'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_EMAIL . '" class="form-control input-md" required="">';
+        return '<input id="enquiry_email" name="enquiry_email" value="' . $this->post['enquiry_email'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_EMAIL .
+            '" class="form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_emailcheck()
@@ -122,7 +160,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_emailcheck()
     {
-        return '<input id="enquiry_emailcheck" name="enquiry_emailcheck" value="'.$this->post['enquiry_emailcheck'].'" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_CONFIRM . '" class="form-control input-md">';
+        return '<input id="enquiry_emailcheck" name="enquiry_emailcheck" value="' . $this->post['enquiry_emailcheck'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_CONFIRM .
+            '" class="form-control input-md">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_otherinfo()
@@ -131,7 +170,8 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_otherinfo()
     {
-        return '<textarea class="form-control" id="enquiry_otherinfo" name="enquiry_otherinfo" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE . '" required="">'.$this->post['enquiry_otherinfo'].'</textarea>';
+        return '<textarea class="form-control" id="enquiry_otherinfo" name="enquiry_otherinfo" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE . '" required="">' . $this->post['enquiry_otherinfo'] .
+            '</textarea>';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_gender2()
@@ -258,7 +298,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     }
     function sc_enquiry_imagecode_number()
     {
-        if ($this->use_imagecode )
+        if ($this->use_imagecode)
         {
             return e107::getSecureImg()->renderImage();
         } else
@@ -269,7 +309,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     function sc_enquiry_imagecode_box($parm = '')
     {
         //var_dump($this->use_imagecode );
-        if ($this->use_imagecode )
+        if ($this->use_imagecode)
         {
             return e107::getSecureImg()->renderInput();
         } else
