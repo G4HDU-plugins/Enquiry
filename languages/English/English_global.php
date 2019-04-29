@@ -13,6 +13,7 @@ define("LAN_PLUGIN_ENQUIRY_LINK", "Enquire");
 define("LAN_PLUGIN_ENQUIRY_NAME", "Enquiries");
 define("LAN_PLUGIN__ENQUIRY_DESC",  "An enquiries form and response management plugin."); 
 
+define("LAN_PLUGIN_ENQUIRY_MAIL",  "New Enquiry"); 
 define("LAN_PLUGIN_ENQUIRY_MAIL_NEW",  "New"); 
 define("LAN_PLUGIN_ENQUIRY_MAIL_NAME",  "enquiry from"); 
 define("LAN_PLUGIN_ENQUIRY_MAIL_ADDR",  "Address"); 

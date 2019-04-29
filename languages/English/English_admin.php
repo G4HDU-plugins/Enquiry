@@ -72,6 +72,14 @@ define("LAN_PLUGIN_ENQUIRY_ADMIN_MRS", "Mrs");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_MISS", "Miss");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_MS", "Ms");
 define("LAN_PLUGIN_ENQUIRY_ADMIN_MX", "Mx");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CONTACT", "Name of person to contact");
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_PHONE", 'Phone number of contact');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_FROM", 'Name of person email is from');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_EMAIL", 'Email from address');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_MAXMEN", 'Maximum number of items in menu');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_MENVIS",'Userclass who can see the menu');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CAPTCHA", 'Use captcha for guests');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CAPCOL, 'Leave blank for site default');
 
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_NAME", "Category Name");
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_DESC", "Description");

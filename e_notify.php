@@ -36,7 +36,7 @@ class enquiry_notify extends notify
     function enquiryNotify($data)
     {
 
-        $subject = "New Enquiry";
+        $subject = LAN_PLUGIN_ENQUIRY_MAIL;
         //	$message = print_a($data,true);
         $message = "<br />
     " . LAN_PLUGIN_ENQUIRY_MAIL_NEW . " " . $data['enquiry_category_name'] . "  " . LAN_PLUGIN_ENQUIRY_MAIL_NAME . " : " . $data['enquiry_name'] . "<br />
