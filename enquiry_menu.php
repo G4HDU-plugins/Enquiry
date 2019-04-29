@@ -41,8 +41,8 @@ if (!e107::getUser()->checkClass($class, false))
         {
             $today = time();
             $oneDay = 86400;
-            $green = (3 * $oneDay);
-            $amber = (9 * $oneDay);
+            //$green = (1 * $oneDay);
+            $amber = (6 * $oneDay);
             $red = (12 * $oneDay);
             $text = '
     <table>';
