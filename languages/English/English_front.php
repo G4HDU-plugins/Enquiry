@@ -64,4 +64,8 @@ define("LAN_PLUGIN_ENQUIRY_FRONT_MISSFIELDS", "Required fields not completed");
 define("LAN_PLUGIN_ENQUIRY_FRONT_ERROR_SUBMIT", "Error submitting your enquiry.");
 define("LAN_PLUGIN_ENQUIRY_FRONT_ERROR_CAPTURE", "Invalid capture verification code.");
 
+define("LAN_PLUGIN_ENQUIRY_CONSENT", "I consent to having this website store my submitted information so they can respond to my enquiry"); //   By using this form, you agree to the storage and processing of your data through this site.");
+define("LANCONTACT_22", "Privacy policy");
+define("LAN_PLUGIN_ENQUIRY_POLICY_LOC", "You can find our privacy policy here: [x]");
+define("LAN_PLUGIN_ENQUIRY_AGREEMENT", "GDPR Agreement");
 

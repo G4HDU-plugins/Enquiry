@@ -80,6 +80,8 @@ define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_MAXMEN", 'Maximum number of items in menu'
 define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_MENVIS",'Userclass who can see the menu');
 define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CAPTCHA", 'Use captcha for guests');
 define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CAPCOL", 'Leave blank for site default');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_HELP_GDPR", 'Ensure GDPR is configured in Admin - Settings');
+define("LAN_PLUGIN_ENQUIRY_ADMIN_GDPR", 'Use GDPR');
 
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_NAME", "Category Name");
 define("LAN_PLUGIN_ENQUIRY_CAT_ADMIN_DESC", "Description");

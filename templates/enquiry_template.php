@@ -150,7 +150,10 @@ class plugin_enquiry_template_class
                 </div>
             </div>
             <hr>
+            <div class="form-group">
+                {ENQUIRY_GDPR}
 
+            </div>
             <!-- Button (Double) -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="submit">&nbsp;</label>
@@ -160,6 +163,8 @@ class plugin_enquiry_template_class
                     {ENQUIRY_CANCEL}
                  </div>
             </div>
+            
+
         </fieldset>
     </form>
 ';

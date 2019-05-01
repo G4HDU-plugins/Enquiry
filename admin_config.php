@@ -474,6 +474,12 @@ class plugin_enquiry_admin_ui extends e_admin_ui
             'data' => 'str',
             'help'=>LAN_PLUGIN_ENQUIRY_ADMIN_HELP_CAPCOL,
             'tab' => 0),
+        'pref_usegdpr' => array(
+            'title' => LAN_PLUGIN_ENQUIRY_ADMIN_GDPR,
+            'type' => 'boolean',
+            'data' => 'str',
+            'help'=>LAN_PLUGIN_ENQUIRY_ADMIN_HELP_GDPR,
+            'tab' => 0),
         'pref_welcome_use' => array(
             'title' => LAN_PLUGIN_ENQUIRY_ADMIN_USEWELCOME,
             'type' => 'boolean',

@@ -31,6 +31,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     public $prefs;
     public $use_imagecode;
     public $guest;
+    private $form;
     /**
      * plugin_enquiry_shortcodes_class::__construct()
      * 
@@ -38,7 +39,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function __construct()
     {
-
+        //$this->frm = e107::getForm();
     }
 
     /**
@@ -80,8 +81,10 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_name($parm = null)
     {
+        //$options[]=array('required'=>'');
+        // return $this->frm->text("enquiry_name", $this->post['enquiry_name'] );
         return '<input id="enquiry_name" name="enquiry_name" value="' . $this->post['enquiry_name'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_NAME .
-            '" class="form-control input-md" required="">';
+            '" class="tbox form-control input-md" required="">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_address1()
@@ -317,4 +320,43 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
             return '';
         }
     }
+    function sc_enquiry_gdpr_check($parm = '')
+    {
+        $parm['class'] = (!empty($parm['class'])) ? $parm['class'] : '';
+        $parm = array_merge(array('required' => 1), $parm);
+        return e107::getForm()->checkbox('enquiry_gdpr', 1, false, $parm);
+    }
+
+    /* {CONTACT_GDPR_LINK} */
+    function sc_enquiry_gdpr_link($parm = '')
+    {
+        $pp = e107::getPref('gdpr_privacypolicy', '');
+        if (!$pp)
+        {
+            return '';
+        }
+        $pp = e107::getParser()->replaceConstants($pp, 'full');
+        $class = (!empty($parm['class'])) ? $parm['class'] : '';
+        $link = sprintf('<span class="%s"><a href="%s" target="_blank">%s</a></span>', $class, $pp, LANCONTACT_22);
+        $text = e107::getParser()->lanVars(LAN_PLUGIN_ENQUIRY_POLICY_LOC, $link);
+        return $text;
+    }
+    function sc_enquiry_gdpr($parm = '')
+    {
+        $this->prefs = e107::pref('enquiry'); // returns an array.
+        if ($this->prefs['pref_usegdpr'] == 1)
+        {
+            $text = '<label class="col-md-4 control-label for="enquiry_gdpr">' . LAN_PLUGIN_ENQUIRY_AGREEMENT . '</label>
+                <div class="col-md-8 checkbox">
+			     	<label>' . $this->sc_enquiry_gdpr_check() . '' . LAN_PLUGIN_ENQUIRY_CONSENT . '</label>
+				    <div class="help-block">' . $this->sc_enquiry_gdpr_link() . '</div> 
+			     </div>';
+            return $text;
+        } else
+        {
+
+            return '';
+        }
+    }
+
 }
