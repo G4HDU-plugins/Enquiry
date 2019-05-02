@@ -84,7 +84,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
         //$options[]=array('required'=>'');
         // return $this->frm->text("enquiry_name", $this->post['enquiry_name'] );
         return '<input id="enquiry_name" name="enquiry_name" value="' . $this->post['enquiry_name'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_NAME .
-            '" class="tbox form-control input-md" required="">';
+            '" class="tbox form-control input-md" required="required">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_address1()
@@ -94,7 +94,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     function sc_enquiry_address1()
     {
         return '<input id="enquiry_address1" name="enquiry_address1" value="' . $this->post['enquiry_address1'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ADDRESS1 .
-            '" class="form-control input-md" required="">';
+            '" class="form-control input-md" required="required">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_address2()
@@ -114,7 +114,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     function sc_enquiry_town()
     {
         return '<input id="enquiry_town" name="enquiry_town" value="' . $this->post['enquiry_town'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_TOWN .
-            '" class="form-control input-md" required="">';
+            '" class="form-control input-md" required="required">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_county()
@@ -134,7 +134,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     function sc_enquiry_postcode()
     {
         return '<input id="enquiry_postcode" name="enquiry_postcode" value="' . $this->post['enquiry_postcode'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_POST .
-            '" class="form-control input-md" required="">';
+            '" class="form-control input-md" required="required">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_phone()
@@ -154,7 +154,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     function sc_enquiry_email()
     {
         return '<input id="enquiry_email" name="enquiry_email" value="' . $this->post['enquiry_email'] . '" type="text" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_EMAIL .
-            '" class="form-control input-md" required="">';
+            '" class="form-control input-md" required="required">';
     }
     /**
      * plugin_enquiry_shortcodes_class::sc_enquiry_emailcheck()
@@ -173,7 +173,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
      */
     function sc_enquiry_otherinfo()
     {
-        return '<textarea class="form-control" id="enquiry_otherinfo" name="enquiry_otherinfo" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE . '" required="">' . $this->post['enquiry_otherinfo'] .
+        return '<textarea class="form-control" id="enquiry_otherinfo" name="enquiry_otherinfo" placeholder="' . LAN_PLUGIN_ENQUIRY_FRONT_PH_ENQUIRE . '" required="required">' . $this->post['enquiry_otherinfo'] .
             '</textarea>';
     }
     /**
@@ -226,7 +226,7 @@ class plugin_enquiry_shortcodes_class extends e_shortcode
     {
         $sql = new DB;
         $qry = "SELECT * FROM #enquiry_categories ORDER BY enquiry_category_name";
-        $field = "<select id='enquiry_category' name='enquiry_category' class='' >";
+        $field = "<select id='enquiry_category' name='enquiry_category' class='tbox' >";
         $sql->gen($qry, false);
         while ($row = $sql->fetch())
         {
